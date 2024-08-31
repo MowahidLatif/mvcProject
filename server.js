@@ -1,7 +1,11 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = 8080;
 
-app.get('/', (req, res) => res.send('<h1>Hello Express</h1>'));
+app.set("view engine", "pug");
 
-app.listen(PORT, console.log('Server is running on port: ' + PORT));
+app.get("/", (req, res) => res.render("dashboard"));
+app.get("/login", (req, res) => res.render("login"));
+app.get("/register", (req, res) => res.render("register"));
+
+app.listen(PORT, console.log("Server is running on port: " + PORT));
