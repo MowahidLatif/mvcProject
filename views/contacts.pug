@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+  .container
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header Contacts
+          .card-body
+            h3 Contact Information
+            .mb-3
+              p Name: John Doe
+              p Email: johndoe@example.com
+              p Phone: (123) 456-7890
+              p Address: 1234 Elm Street, Springfield, IL
+            h4 Office Hours
+            .mb-3
+              p Monday - Friday: 9 AM - 5 PM
+              p Saturday: 10 AM - 2 PM
+              p Sunday: Closed
+            h4 Get in Touch
+            form.form-horizontal(method='post' action='/contacts')
+              .mb-3
+                label.form-label.control-label(for='message') Your Message
+                textarea#message.form-control(name='message' rows='4')
+              .mb-3.py-3
+                button.btn.btn-primary(type='submit') Send Message
+                a(href='/').ps-2 Back to Home
